@@ -38,6 +38,6 @@ sudo /etc/init.d/pbs_sched start
 
 
 cd run
-qsub torque.sim
+/opt/local/bin/qsub torque.sim
 
 
