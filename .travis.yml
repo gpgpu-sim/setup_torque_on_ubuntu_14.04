@@ -2,5 +2,5 @@ dist: trusty
 before_install: 
         - sudo apt-get install -y g++ libssl-dev libxml2-dev libboost-all-dev
 language: cpp
-script: pwd && ls && `pwd`/install_torque.sh
+script: ./install_torque.sh
 
