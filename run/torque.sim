@@ -1,0 +1,5 @@
+#PBS -S /bin/bash
+
+mkdir ~/run
+cd ~/run
+echo foo3 > bar3.txt
