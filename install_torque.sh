@@ -14,6 +14,8 @@ sudo cp debian.pbs_sched /etc/init.d/pbs_sched
 # torque configuration
 hostname | sudo tee /var/spool/torque/server_name
 echo y | sudo /opt/local/sbin/pbs_server -t create
+sudo /etc/init.d/trqauthd start
+
 sudo /opt/local/bin/qmgr -c "set server scheduling=true"
 sudo /opt/local/bin/qmgr -c "create queue batch queue_type=execution"
 sudo /opt/local/bin/qmgr -c "set queue batch started=true"
@@ -22,7 +24,6 @@ sudo /opt/local/bin/qmgr -c "set queue batch resources_default.nodes=1"
 sudo /opt/local/bin/qmgr -c "set queue batch resources_default.walltime=3600"
 sudo /opt/local/bin/qmgr -c "set server default_queue=batch"
 
-sudo /etc/init.d/trqauthd start
 sudo /opt/local/bin/qterm
 
 echo "pbs_server = 127.0.0.1" | sudo tee /var/spool/torque/mom_priv/config
