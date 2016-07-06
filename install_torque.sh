@@ -1,4 +1,5 @@
 #!/bin/sh
 
-./torque-package-mom-linux-x86_64.sh
-./torque-package-server-linux-x86_64.sh
+sudo ./torque-package-mom-linux-x86_64.sh --install
+sudo ./torque-package-server-linux-x86_64.sh --install
+ps aux | grep pbs
